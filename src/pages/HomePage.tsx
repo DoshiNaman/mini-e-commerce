@@ -4,11 +4,11 @@ import { ProductCard } from '../components/ProductCard' // importing ProductCard
 
 // Define a Product interface
 interface Product {
-  id: number;
-  name: string;
-  category: string;
-  price: number;
-  image: string;
+  id: number
+  name: string
+  category: string
+  price: number
+  image: string
 }
 
 export const HomePage = () => {
@@ -23,7 +23,7 @@ export const HomePage = () => {
   // Fetching products from the API
   useEffect(() => {
     axios
-      .get('/src/mock/products.json')
+      .get('/products.json')
       .then((res) => setProducts(res.data))
       .catch((err) => console.error('Error fetching products:', err))
   }, [])

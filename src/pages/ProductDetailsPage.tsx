@@ -8,12 +8,12 @@ import 'react-toastify/dist/ReactToastify.css' // Importing React Toastify CSS
 export const ProductDetailsPage = () => {
   // Define a Product type
   type Product = {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-    image: string;
-  };
+    id: number
+    name: string
+    description: string
+    price: number
+    image: string
+  }
 
   const { id } = useParams<string>() // Extracting id from useParams
   const [product, setProduct] = useState<Product | null>(null) // State for product data
@@ -22,7 +22,7 @@ export const ProductDetailsPage = () => {
 
   // Fetching product data on component mount
   useEffect(() => {
-    axios.get('/src/mock/products.json').then((res) => {
+    axios.get('/products.json').then((res) => {
       const product = res.data.find((p: Product) => p.id === parseInt(id!)) // Finding product by id
       setProduct(product || null) // Setting product state
     })
